@@ -1,0 +1,31 @@
+Here are some friendly commands you can use for automating ssh-based network operations.
+
+INSTALL:
+
+$ sudo ./install.sh
+
+and you're done!
+
+USAGE:
+
+$ fab is_up 
+(checks if the hosts in the hosts file are up and reachable)
+
+$ fab host_type
+(returns the host type of every host in the hosts file)
+
+$ fab shutdown
+(shuts down all hosts in the hosts file)
+
+$ fab key_copy
+(tries to copy your id_rsa.pub to all hosts in the hosts file, so that you can log in without a password.
+Note that you must first generate a key with $ ssh-keygen -t rsa)
+
+HOSTS FILE:
+To define the hosts you want to run against, edit the hosts file with a full host string, eg:
+
+root@192.168.1.1
+
+Note that the user must be a user you have access to, and you need the full user@host for this script to work. 
+
+Have fun!
